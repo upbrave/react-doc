@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([[47],{ZYVk:function(n,e,o){"use strict";o.r(e);var t=o("q1tI"),a=o.n(t);e["default"]=()=>a.a.createElement("div",null,"Goo1")}}]);
