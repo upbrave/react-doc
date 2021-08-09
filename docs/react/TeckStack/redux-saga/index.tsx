@@ -1,12 +1,14 @@
-import React from 'react';
+import * as React from 'react';
 import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import {Button} from 'antd';
+import { Button } from 'antd';
 import thunk from 'redux-thunk';
 
-
 import saga1 from './saga';
-const reducer = (state = 0, action:any)=>{
+import simple from './simple-saga';
+
+const reducer = (state = 0, action: any) => {
+  console.log(action);
   switch (action.type) {
     case 'INCREMENT':
       return state + 1;
@@ -17,25 +19,24 @@ const reducer = (state = 0, action:any)=>{
     default:
       return state;
   }
-}
+};
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(reducer, applyMiddleware(sagaMiddleware, thunk));
-sagaMiddleware.run(saga1, store.dispatch);
+sagaMiddleware.run(simple, store.dispatch);
 
-
-export default ()=>{
-  const clickHandler = ()=>{
-    store.dispatch({type:'start'})
-  }
-  const endHandler = ()=>{
-    store.dispatch({type:'stop'})
-  }
-  const triggerTakeEvery  = ()=>{
-    store.dispatch({type:'takeEvery', payload: 'xxx'})
-  }
-  const triggerTake  = ()=>{
-    store.dispatch({type:'request', payload: 'xxx'})
-  }
+export default () => {
+  const clickHandler = () => {
+    store.dispatch({ type: 'start' });
+  };
+  const endHandler = () => {
+    store.dispatch({ type: 'stop' });
+  };
+  const triggerTakeEvery = () => {
+    store.dispatch({ type: 'takeEvery', payload: 'xxx' });
+  };
+  const triggerTake = () => {
+    store.dispatch({ type: 'request', payload: 'xxx' });
+  };
 
   return (
     <div>
@@ -44,7 +45,5 @@ export default ()=>{
       <Button onClick={triggerTakeEvery}>触发takeEvery</Button>
       <Button onClick={triggerTake}>触发take</Button>
     </div>
-  )
-}
-
-
+  );
+};
