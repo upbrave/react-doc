@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([[60],{UDLP:function(e,n,t){"use strict";t.r(n),n["default"]=function(e){var n=document.createRange(),t=document.querySelector(e);n.selectNode(t);var c=window.getSelection();c.empty(),c.addRange(n),document.execCommand("copy"),c.empty(),n.detach(),n=null}}}]);

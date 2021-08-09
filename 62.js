@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([[62],{nYMk:function(e,t,n){"use strict";n.r(t);var o=null;t["default"]=e=>{o||(o=document.createElement("input"),document.body.appendChild(o),o.style.opacity=0,o.style.position="absolute",o.style.left="-2000px"),o.value=e,o.select(),document.execCommand("Copy")}}}]);
