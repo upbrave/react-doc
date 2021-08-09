@@ -1,8 +1,10 @@
 import { defineConfig } from 'dumi';
 const path = require('path');
 export default defineConfig({
-  title: 'react-three',
+  title: 'react-doc',
   outputPath: 'docs-dist',
+  base: '/react-doc/',
+  publicPath: '/react-doc/',
   mode: 'site',
   logo: 'https://tva1.sinaimg.cn/large/008i3skNgy1grohfghpboj305k05kq2x.jpg',
   extraBabelPlugins: [
@@ -32,6 +34,7 @@ export default defineConfig({
   },
   extraPostCSSPlugins: [require('postcss-write-svg')()],
   favicon: 'https://tva1.sinaimg.cn/large/008i3skNgy1grohfghpboj305k05kq2x.jpg',
-
+  dynamicImport: {},
+  exportStatic: {},
   // more config: https://d.umijs.org/config
 });
